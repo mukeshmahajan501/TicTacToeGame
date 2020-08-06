@@ -1,4 +1,7 @@
+import java.util.Random;
+
 public class TicTacToe {
+
 	// declare array
 	static String[] board = new String[9];
 
@@ -12,8 +15,28 @@ public class TicTacToe {
 
 	}
 
+	// function to decide get toss number
+	public static int getTossNumber() {
+		Random random = new Random();
+		return random.nextInt(2) + 1;
+	}
+
+	static int toss = getTossNumber();
+
+	// function to decide who plays first
+	public static void getPlayerFirst() {
+		if (toss == 1) {
+			System.out.println("player 1 won the toss!!!");
+
+		} else {
+			System.out.println("player 2  won the toss!!!");
+
+		}
+	}
+
 	public static void main(String[] args) {
 		resetBoard();
+		getPlayerFirst();
 	}
 
 }
